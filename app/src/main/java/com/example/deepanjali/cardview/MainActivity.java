@@ -18,6 +18,20 @@ public class MainActivity extends AppCompatActivity {
 //    private ArrayList<CustomList> countries;
     private ArrayList<CustomList> countries ;
 
+    private String names[] = {
+            "HTML",
+            "CSS",
+            "Java Script",
+            "Wordpress"
+    };
+
+    private String desc[] = {
+            "The Powerful Hypter Text Markup Language 5",
+            "Cascading Style Sheets",
+            "Code with Java Script",
+            "Manage your content with Wordpress"
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
