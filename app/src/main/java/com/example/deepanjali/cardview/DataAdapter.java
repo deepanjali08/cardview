@@ -1,5 +1,6 @@
 package com.example.deepanjali.cardview;
 
+import android.media.Image;
 import android.provider.ContactsContract;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,11 +20,28 @@ import java.util.ArrayList;
  */
 
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
-    private ArrayList<String> countries;
+//    private ArrayList<String> countries;
+    private ArrayList<CustomList> countries;
+    private String names[] = {
+            "HTML",
+            "CSS",
+            "Java Script",
+            "Wordpress"
+    };
 
-    public DataAdapter(ArrayList<String> countries) {
+    private String desc[] = {
+            "The Powerful Hypter Text Markup Language 5",
+            "Cascading Style Sheets",
+            "Code with Java Script",
+            "Manage your content with Wordpress"
+    };
+
+
+    public DataAdapter(ArrayList<CustomList> countries) {
         this.countries = countries;
     }
+
+
 
     @Override
     public DataAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
@@ -33,7 +52,11 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(DataAdapter.ViewHolder viewHolder, int i) {
 
-        viewHolder.tv_country.setText(countries.get(i));
+        viewHolder.tv_country.setText(countries.get(i).toString());
+        viewHolder.tv_desc.setText(countries.get(i).toString());
+//        viewHolder.tv_image.setImageResource(countries.get(i));
+
+
     }
 
     @Override
@@ -43,10 +66,17 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView tv_country;
+        private TextView tv_desc;
+//        private ImageView tv_image;
+
         public ViewHolder(View view) {
             super(view);
 
             tv_country = (TextView)view.findViewById(R.id.tv_country);
+            tv_desc=(TextView)view.findViewById(R.id.tv_desc);
+//            tv_image=(ImageView)view.findViewById(R.id.tv_image);
+
+
         }
     }
 
