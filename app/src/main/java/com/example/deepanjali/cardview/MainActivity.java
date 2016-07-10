@@ -47,11 +47,17 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         countries = new ArrayList<CustomList>();
 //        countries = new ArrayList<>();
-//        countries.add("Australia");
-//        countries.add("India");
-//        countries.add("United States of America");
-//        countries.add("Germany");
-//        countries.add("Russia");
+
+        for(int i=0;i<4;i++){
+            countries.add(new CustomList(names[i],desc[i]));
+        }
+
+//        countries.add(new CustomList("Html","The Powerful Hypertext markup language"));
+//        countries.add(new CustomList("CSS","Cascading style sheet"));
+//        countries.add(new CustomList("Javascript","Code with Javascript"));
+//        countries.add(new CustomList("Java","Code with Java ,Independent Platform"));
+//
+
         RecyclerView.Adapter adapter = new DataAdapter(countries);
         recyclerView.setAdapter(adapter);
 
