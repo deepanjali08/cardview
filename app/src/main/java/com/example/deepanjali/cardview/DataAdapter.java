@@ -24,8 +24,8 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     private ArrayList<CustomList> countries;
 
 
-    private String names[];
-    private String desc[];
+    public String names;
+    public String desc;
 
     public DataAdapter(ArrayList<CustomList> countries) {
         this.countries = countries;
@@ -42,8 +42,8 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(DataAdapter.ViewHolder viewHolder, int i) {
 
-        viewHolder.tv_country.setText(countries.get(i).toString());
-        viewHolder.tv_desc.setText(countries.get(i).toString());
+        viewHolder.tv_country.setText(countries.get(i).names);
+        viewHolder.tv_desc.setText(countries.get(i).desc);
 //        viewHolder.tv_image.setImageResource(countries.get(i));
 
 //

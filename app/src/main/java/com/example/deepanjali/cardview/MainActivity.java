@@ -18,21 +18,6 @@ public class MainActivity extends AppCompatActivity {
 //    private ArrayList<CustomList> countries;
     private ArrayList<CustomList> countries ;
 
-    private String names[] = {
-            "HTML",
-            "CSS",
-            "Java Script",
-            "Wordpress"
-    };
-
-    private String desc[] = {
-            "The Powerful Hypter Text Markup Language 5",
-            "Cascading Style Sheets",
-            "Code with Java Script",
-            "Manage your content with Wordpress"
-    };
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,15 +33,13 @@ public class MainActivity extends AppCompatActivity {
         countries = new ArrayList<CustomList>();
 //        countries = new ArrayList<>();
 
-        for(int i=0;i<4;i++){
-            countries.add(new CustomList(names[i],desc[i]));
-        }
 
-//        countries.add(new CustomList("Html","The Powerful Hypertext markup language"));
-//        countries.add(new CustomList("CSS","Cascading style sheet"));
-//        countries.add(new CustomList("Javascript","Code with Javascript"));
-//        countries.add(new CustomList("Java","Code with Java ,Independent Platform"));
-//
+
+        countries.add(new CustomList("Html","The Powerful Hypertext markup language"));
+        countries.add(new CustomList("CSS","Cascading style sheet"));
+        countries.add(new CustomList("Javascript","Code with Javascript"));
+        countries.add(new CustomList("Java","Code with Java ,Independent Platform"));
+
 
         RecyclerView.Adapter adapter = new DataAdapter(countries);
         recyclerView.setAdapter(adapter);
