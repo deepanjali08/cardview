@@ -56,7 +56,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         viewHolder.tv_desc.setText(countries.get(i).toString());
 //        viewHolder.tv_image.setImageResource(countries.get(i));
 
-
+//
     }
 
     @Override
